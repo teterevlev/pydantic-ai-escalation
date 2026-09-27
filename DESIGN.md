@@ -90,8 +90,12 @@ The capability's own decision is the escalation; the requests themselves are alr
 
 The layout mirrors a Pydantic AI Harness capability (`_capability.py` with the implementation, public names re-exported from `__init__.py`), so that moving it into the harness later would be close to a copy. The code is checked with Pyright in strict mode and Ruff (120 columns, single quotes), and tests keep 100% branch coverage. Tests go through `Agent` with scripted `FunctionModel`s and make no provider calls. The one exception to testing through the public surface is the forward-compatibility test for #8094's retry format, which the released Pydantic AI can't produce yet.
 
+## Streaming
+
+`run_stream_events()` and `run()` with an `event_stream_handler` stream every model response and still retry output validation, so escalation behaves exactly as in a plain `run()`; the tests cover both, with text and tool output. `run_stream()` is different: Pydantic AI treats the first output as final and raises `UnexpectedModelBehavior` if it fails validation, because the output has already been streamed to the caller. There is no second request, so there is nothing for the capability to escalate. It can't detect which method started the run, so this is documented rather than warned about.
+
 ## Not done yet
 
-- Streaming runs and durable execution use the same selection path but aren't covered by tests.
+- Durable execution uses the same selection path but isn't covered by tests.
 - Optional trimming of earlier failed attempts on escalation.
 - Letting a level use the agent's own model instead of naming one explicitly.

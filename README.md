@@ -104,7 +104,8 @@ When [instrumentation](https://ai.pydantic.dev/logfire/) is on, each escalation 
 
 ## Limitations
 
-- Tested with the regular `run` loop. Streaming runs and durable execution use the same model selection path but haven't been tested yet.
+- **`run_stream()` can't escalate.** Pydantic AI doesn't retry output validation in `run_stream()`: it fails on the first invalid output, so there is never a second request to send to another model. Use `run_stream_events()` or `run()` with an `event_stream_handler` instead; both stream every response and escalate as usual.
+- Durable execution uses the same model selection path but hasn't been tested yet.
 - The upcoming change to how Pydantic AI records retries ([pydantic/pydantic-ai#8094](https://github.com/pydantic/pydantic-ai/pull/8094)) is handled, but only tested against a simulation of the new format.
 
 ## Why it's built this way
