@@ -28,9 +28,10 @@ classifiers = [
 dependencies = ["pydantic-ai-slim>=2.51.0"]
 
 [project.urls]
+Homepage = "https://github.com/teterevlev/pydantic-ai-escalation"
 Repository = "https://github.com/teterevlev/pydantic-ai-escalation"
 Issues = "https://github.com/teterevlev/pydantic-ai-escalation/issues"
-Homepage = "https://revlev.org/"
+Author = "https://revlev.org/"
 
 [dependency-groups]
 dev = [
