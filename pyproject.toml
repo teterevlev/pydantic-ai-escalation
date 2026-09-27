@@ -25,7 +25,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Typing :: Typed",
 ]
-dependencies = ["pydantic-ai-slim>=2.51.0"]
+dependencies = ["pydantic-ai-slim>=2.50.0"]
 
 [project.urls]
 Homepage = "https://github.com/teterevlev/pydantic-ai-escalation"
