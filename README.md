@@ -14,7 +14,7 @@ mini ──✗──▶ mini + error ──✗──▶ terra + errors ──✓
 pip install pydantic-ai-escalation
 ```
 
-Requires `pydantic-ai-slim` 2.51 or later and Python 3.10+.
+Requires `pydantic-ai-slim` 2.50 or later and Python 3.10+.
 
 ## Usage
 
