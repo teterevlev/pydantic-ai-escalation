@@ -110,7 +110,7 @@ When [instrumentation](https://ai.pydantic.dev/logfire/) is on, each escalation 
 
 ## Why it's built this way
 
-See [DESIGN.md](DESIGN.md) for the decisions behind the API: why this is a capability rather than a `FallbackModel`, what exactly counts as a failure, and why the budget is yours to set.
+See the [article](https://research.revlev.org/posts/escalating-on-validation-failure/) for the story, and [DESIGN.md](DESIGN.md) for the API decisions: why this is a capability rather than a `FallbackModel`, what exactly counts as a failure, and why the budget is yours to set.
 
 ## License
 

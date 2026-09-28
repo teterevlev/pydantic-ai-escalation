@@ -32,6 +32,7 @@ Homepage = "https://github.com/teterevlev/pydantic-ai-escalation"
 Repository = "https://github.com/teterevlev/pydantic-ai-escalation"
 Issues = "https://github.com/teterevlev/pydantic-ai-escalation/issues"
 Author = "https://revlev.org/"
+Article = "https://research.revlev.org/posts/escalating-on-validation-failure/"
 
 [dependency-groups]
 dev = [
